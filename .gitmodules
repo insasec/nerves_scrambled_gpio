@@ -1,0 +1,3 @@
+[submodule "gpio_system_bbb"]
+	path = gpio_system_bbb
+	url = ./gpio_system_bbb

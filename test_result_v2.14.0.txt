@@ -1,0 +1,145 @@
+iex(1)> cat "/proc/version"
+Linux version 5.10.100 (buildroot@buildroot) (armv7-nerves-linux-gnueabihf-gcc (crosstool-NG 1.24.0.498_5075e1f) 10.3.0, GNU ld (crosstool-NG 1.24.0.498_5075e1f) 2.37) #1 PREEMPT Wed Jun 29 19:50:49 CEST 2022
+iex(2)> Gpio.test_gpio()
+PASS - Actual label (P9_23) matches expected label (P9_23) for GPIO 49
+:ok
+iex(3)> cmd "gpiodetect"
+gpiochip0 [gpio-0-31] (32 lines)
+gpiochip1 [gpio-32-63] (32 lines)
+gpiochip2 [gpio-64-95] (32 lines)
+gpiochip3 [gpio-96-127] (32 lines)
+0
+iex(4)> cmd "gpioinfo"
+gpiochip0 - 32 lines:
+	line   0: "[mdio_data]" unused input active-high 
+	line   1: "[mdio_clk]"       unused   input  active-high 
+	line   2: "P9_22 [spi0_sclk]" "P9_22" input active-high [used]
+	line   3: "P9_21 [spi0_d0]" "P9_21" input active-high [used]
+	line   4: "P9_18 [spi0_d1]" "P9_18" input active-high [used]
+	line   5: "P9_17 [spi0_cs0]" "P9_17" input active-high [used]
+	line   6:  "[mmc0_cd]"         "cd"   input   active-low [used]
+	line   7: "P8_42A [ecappwm0]" "P9_42" input active-high [used]
+	line   8: "P8_35 [lcd d12]" "P8_35" input active-high [used]
+	line   9: "P8_33 [lcd d13]" "P8_33" input active-high [used]
+	line  10: "P8_31 [lcd d14]" "P8_31" input active-high [used]
+	line  11: "P8_32 [lcd d15]" "P8_32" input active-high [used]
+	line  12: "P9_20 [i2c2_sda]" "P9_20" input active-high [used]
+	line  13: "P9_19 [i2c2_scl]" "P9_19" input active-high [used]
+	line  14: "P9_26 [uart1_rxd]" "P9_26" input active-high [used]
+	line  15: "P9_24 [uart1_txd]" "P9_24" input active-high [used]
+	line  16: "[rmii1_txd3]" unused input active-high 
+	line  17: "[rmii1_txd2]" unused input active-high 
+	line  18: "[usb0_drvvbus]" unused input active-high 
+	line  19: "[hdmi cec]"       unused   input  active-high 
+	line  20:     "P9_41B"      "P9_41"   input  active-high [used]
+	line  21: "[rmii1_txd1]" unused input active-high 
+	line  22: "P8_19 [ehrpwm2a]" "P8_19" input active-high [used]
+	line  23: "P8_13 [ehrpwm2b]" "P8_13" input active-high [used]
+	line  24:         "NC"       unused   input  active-high 
+	line  25:         "NC"       unused   input  active-high 
+	line  26:      "P8_14"      "P8_14"   input  active-high [used]
+	line  27:      "P8_17"      "P8_17"   input  active-high [used]
+	line  28: "[rmii1_txd0]" unused input active-high 
+	line  29: "[rmii1_refclk]" unused input active-high 
+	line  30: "P9_11 [uart4_rxd]" "P9_11" input active-high [used]
+	line  31: "P9_13 [uart4_txd]" "P9_13" input active-high [used]
+gpiochip1 - 32 lines:
+	line   0: "P8_25 [mmc1_dat0]" "P8_25" input active-high [used]
+	line   1: "[mmc1_dat1]" "P8_24" input active-high [used]
+	line   2: "P8_5 [mmc1_dat2]" "P8_05" input active-high [used]
+	line   3: "P8_6 [mmc1_dat3]" "P8_06" input active-high [used]
+	line   4: "P8_23 [mmc1_dat4]" "P8_23" input active-high [used]
+	line   5: "P8_22 [mmc1_dat5]" "P8_22" input active-high [used]
+	line   6: "P8_3 [mmc1_dat6]" "P8_03" input active-high [used]
+	line   7: "P8_4 [mmc1_dat7]" "P8_04" input active-high [used]
+	line   8:         "NC"       unused   input  active-high 
+	line   9:         "NC"       unused   input  active-high 
+	line  10:         "NC"       unused   input  active-high 
+	line  11:         "NC"       unused   input  active-high 
+	line  12:      "P8_12"      "P8_12"   input  active-high [used]
+	line  13:      "P8_11"      "P8_11"   input  active-high [used]
+	line  14:      "P8_16"      "P8_16"   input  active-high [used]
+	line  15:      "P8_15"      "P8_15"   input  active-high [used]
+	line  16:     "P9_15A"      "P9_15"   input  active-high [used]
+	line  17:      "P9_23"      "P9_23"   input  active-high [used]
+	line  18: "P9_14 [ehrpwm1a]" "P9_14" input active-high [used]
+	line  19: "P9_16 [ehrpwm1b]" "P9_16" input active-high [used]
+	line  20: "[emmc rst]"       unused   input  active-high 
+	line  21: "[usr0 led]" "beaglebone:green:usr0" output active-high [used]
+	line  22: "[usr1 led]" "beaglebone:green:usr1" output active-high [used]
+	line  23: "[usr2 led]" "beaglebone:green:usr2" output active-high [used]
+	line  24: "[usr3 led]" "beaglebone:green:usr3" output active-high [used]
+	line  25: "[hdmi irq]"       unused   input  active-high 
+	line  26: "[usb vbus oc]" unused input active-high 
+	line  27: "[hdmi audio]" "enable" output active-high [used]
+	line  28:      "P9_12"      "P9_12"   input  active-high [used]
+	line  29:      "P8_26"      "P8_26"   input  active-high [used]
+	line  30: "P8_21 [emmc]" "P8_21" input active-high [used]
+	line  31: "P8_20 [emmc]" "P8_20" input active-high [used]
+gpiochip2 - 32 lines:
+	line   0:     "P9_15B"       unused   input  active-high 
+	line   1:      "P8_18"      "P8_18"   input  active-high [used]
+	line   2:       "P8_7"      "P8_07"   input  active-high [used]
+	line   3:       "P8_8"      "P8_08"   input  active-high [used]
+	line   4:      "P8_10"      "P8_10"   input  active-high [used]
+	line   5:       "P8_9"      "P8_09"   input  active-high [used]
+	line   6: "P8_45 [hdmi]" "P8_45" input active-high [used]
+	line   7: "P8_46 [hdmi]" "P8_46" input active-high [used]
+	line   8: "P8_43 [hdmi]" "P8_43" input active-high [used]
+	line   9: "P8_44 [hdmi]" "P8_44" input active-high [used]
+	line  10: "P8_41 [hdmi]" "P8_41" input active-high [used]
+	line  11: "P8_42 [hdmi]" "P8_42" input active-high [used]
+	line  12: "P8_39 [hdmi]" "P8_39" input active-high [used]
+	line  13: "P8_40 [hdmi]" "P8_40" input active-high [used]
+	line  14: "P8_37 [hdmi]" "P8_37" input active-high [used]
+	line  15: "P8_38 [hdmi]" "P8_38" input active-high [used]
+	line  16: "P8_36 [hdmi]" "P8_36" input active-high [used]
+	line  17: "P8_34 [hdmi]" "P8_34" input active-high [used]
+	line  18: "[rmii1_rxd3]" unused input active-high 
+	line  19: "[rmii1_rxd2]" unused input active-high 
+	line  20: "[rmii1_rxd1]" unused input active-high 
+	line  21: "[rmii1_rxd0]" unused input active-high 
+	line  22: "P8_27 [hdmi]" "P8_27" input active-high [used]
+	line  23: "P8_29 [hdmi]" "P8_29" input active-high [used]
+	line  24: "P8_28 [hdmi]" "P8_28" input active-high [used]
+	line  25: "P8_30 [hdmi]" "P8_30" input active-high [used]
+	line  26: "[mmc0_dat3]" unused input active-high 
+	line  27: "[mmc0_dat2]" unused input active-high 
+	line  28: "[mmc0_dat1]" unused input active-high 
+	line  29: "[mmc0_dat0]" unused input active-high 
+	line  30: "[mmc0_clk]"       unused   input  active-high 
+	line  31: "[mmc0_cmd]"       unused   input  active-high 
+gpiochip3 - 32 lines:
+	line   0:  "[mii col]"       unused   input  active-high 
+	line   1:  "[mii crs]"       unused   input  active-high 
+	line   2: "[mii rx err]" unused input active-high 
+	line   3: "[mii tx en]" unused input active-high 
+	line   4: "[mii rx dv]" unused input active-high 
+	line   5: "[i2c0 sda]"       unused   input  active-high 
+	line   6: "[i2c0 scl]"       unused   input  active-high 
+	line   7: "[jtag emu0]" unused input active-high 
+	line   8: "[jtag emu1]" unused input active-high 
+	line   9: "[mii tx clk]" unused input active-high 
+	line  10: "[mii rx clk]" unused input active-high 
+	line  11:         "NC"       unused   input  active-high 
+	line  12:         "NC"       unused   input  active-high 
+	line  13: "[usb vbus en]" unused input active-high 
+	line  14: "P9_31 [spi1_sclk]" "P9_31" input active-high [used]
+	line  15: "P9_29 [spi1_d0]" "P9_29" input active-high [used]
+	line  16: "P9_30 [spi1_d1]" "P9_30" input active-high [used]
+	line  17: "P9_28 [spi1_cs0]" "P9_28" input active-high [used]
+	line  18: "P9_42B [ecappwm0]" "P9_92" input active-high [used]
+	line  19:      "P9_27"      "P9_27"   input  active-high [used]
+	line  20:     "P9_41A"      "P9_91"   input  active-high [used]
+	line  21:      "P9_25"      "P9_25"   input  active-high [used]
+	line  22:         "NC"       unused   input  active-high 
+	line  23:         "NC"       unused   input  active-high 
+	line  24:         "NC"       unused   input  active-high 
+	line  25:         "NC"       unused   input  active-high 
+	line  26:         "NC"       unused   input  active-high 
+	line  27:         "NC"       unused   input  active-high 
+	line  28:         "NC"       unused   input  active-high 
+	line  29:         "NC"       unused   input  active-high 
+	line  30:         "NC"       unused   input  active-high 
+	line  31:         "NC"       unused   input  active-high 
+0
